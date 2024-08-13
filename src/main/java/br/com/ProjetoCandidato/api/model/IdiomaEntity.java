@@ -2,8 +2,17 @@ package br.com.ProjetoCandidato.api.model;
 
 import br.com.ProjetoCandidato.core.enums.NivelIdiomaEnum;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Entity(name = "TB_IDIOMA")
+@Entity
+@Table(name = "TB_IDIOMA")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class IdiomaEntity {
 
     @Id

@@ -2,9 +2,20 @@ package br.com.ProjetoCandidato.api.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
 
-@Entity(name = "TB_CANDIDATO")
+import java.util.List;
+
+@Entity
+@Table(name = "TB_CANDIDATO")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class CandidatoEntity {
 
     @Id
@@ -48,13 +59,21 @@ public class CandidatoEntity {
     @Column(name = "LINK_LINKEDIN")
     private String linkLinkedin;
 
-    private CursoCertificadoEntity cursoCertificado;
+    @OneToMany
+    @JoinColumn(name = "cursoCertificado_id")
+    private List<CursoCertificadoEntity> cursoCertificado;
 
-    private ExperienciaEntity experiencia;
+    @OneToMany
+    @JoinColumn(name = "experiencia_id")
+    private List<ExperienciaEntity> experiencia;
 
-    private FormacaoEntity formacao;
+    @OneToMany
+    @JoinColumn(name = "formacao_id")
+    private List<FormacaoEntity> formacao;
 
-    private IdiomaEntity idioma;
+    @OneToMany
+    @JoinColumn(name = "idioma_id")
+    private List<IdiomaEntity> idioma;
 
 
 

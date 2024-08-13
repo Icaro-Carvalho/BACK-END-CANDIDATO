@@ -4,10 +4,19 @@ import br.com.ProjetoCandidato.core.enums.GrauFormacaoEnum;
 import br.com.ProjetoCandidato.core.enums.StatusFormacaoEnum;
 import br.com.ProjetoCandidato.core.enums.TipoFormacaoEnum;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Entity(name = "TB_FORMACAO")
+@Entity
+@Table(name = "TB_FORMACAO")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class FormacaoEntity {
 
     @Id

@@ -1,10 +1,19 @@
 package br.com.ProjetoCandidato.api.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Entity(name = "TB_EXPERIENCIA")
+@Entity
+@Table(name = "TB_EXPERIENCIA")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class ExperienciaEntity {
 
     @Id
