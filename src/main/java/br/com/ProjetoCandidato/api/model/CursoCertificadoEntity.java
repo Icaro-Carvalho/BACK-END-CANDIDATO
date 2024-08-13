@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity(name = "TB_CURSOS_CERTIFICADOS")
-public class CursoCertificado {
+public class CursoCertificadoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
