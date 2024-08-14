@@ -1,5 +1,6 @@
 package br.com.ProjetoCandidato.api.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -8,7 +9,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "TB_CANDIDATO")
@@ -61,19 +64,23 @@ public class CandidatoEntity {
 
     @OneToMany
     @JoinColumn(name = "cursoCertificado_id")
-    private List<CursoCertificadoEntity> cursoCertificado;
+    private Set<CursoCertificadoEntity> cursoCertificado = new HashSet<>();
 
     @OneToMany
     @JoinColumn(name = "experiencia_id")
-    private List<ExperienciaEntity> experiencia;
+    private Set<ExperienciaEntity> experiencia = new HashSet<>();
 
     @OneToMany
     @JoinColumn(name = "formacao_id")
-    private List<FormacaoEntity> formacao;
+    private Set<FormacaoEntity> formacao = new HashSet<>();
 
     @OneToMany
     @JoinColumn(name = "idioma_id")
-    private List<IdiomaEntity> idioma;
+    private Set<IdiomaEntity> idioma = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(name = "vaga_id")
+    private VagaEntity vaga;
 
 
 
