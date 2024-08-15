@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -49,4 +48,8 @@ public class VagaEntity {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "vaga", fetch = FetchType.LAZY)
     private Set<CandidatoEntity> candidato = new HashSet<>();
+
+    @OneToMany
+    @JoinColumn(name = "prova_id")
+    private Set<ProvaEntity> prova = new HashSet<>();
 }
