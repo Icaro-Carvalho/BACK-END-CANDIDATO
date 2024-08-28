@@ -37,12 +37,15 @@ public class FormacaoEntity {
     private LocalDate dataFim;
 
     @Column(name = "TIPO")
+    @Enumerated(EnumType.STRING)
     private TipoFormacaoEnum tipo;
 
     @Column(name = "GRAU")
+    @Enumerated(EnumType.STRING)
     private GrauFormacaoEnum grau;
 
     @Column(name = "STATUS")
+    @Enumerated(EnumType.STRING)
     private StatusFormacaoEnum status;
 
 }

@@ -24,5 +24,6 @@ public class IdiomaEntity {
     private String idioma;
 
     @Column(name = "NIVEL")
+    @Enumerated(EnumType.STRING)
     private NivelIdiomaEnum nivel;
 }

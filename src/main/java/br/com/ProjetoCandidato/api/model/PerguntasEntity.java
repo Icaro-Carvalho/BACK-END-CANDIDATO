@@ -28,6 +28,7 @@ public class PerguntasEntity {
 
     @Column(name = "TIPO_PERGUNTA")
     @NotNull
+    @Enumerated(EnumType.STRING)
     private TipoPerguntaEnum tipoPergunta;
 
     @Column(name = "PONTUACAO")

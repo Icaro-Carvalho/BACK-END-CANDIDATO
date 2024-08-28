@@ -42,7 +42,7 @@ public class VagaEntity {
     private String cidade;
 
     @ManyToOne
-    @JoinColumn(name = "empresa_id")
+    @JoinColumn(name = "vaga_empresa_id")
     private EmpresaEntity empresa;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -50,6 +50,6 @@ public class VagaEntity {
     private Set<CandidatoEntity> candidato = new HashSet<>();
 
     @OneToMany
-    @JoinColumn(name = "prova_id")
+    @JoinColumn(name = "vaga_prova_id")
     private Set<ProvaEntity> prova = new HashSet<>();
 }

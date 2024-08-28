@@ -31,15 +31,15 @@ public class RespostasUsuarios {
     private float pontuacao;
 
     @OneToOne
-    @JoinColumn(name = "candidato_id")
+    @JoinColumn(name = "resposta_candidato_id")
     private CandidatoEntity candidato;
 
     @ManyToOne
-    @JoinColumn(name = "prova_id")
+    @JoinColumn(name = "resposta_prova_id")
     private ProvaEntity prova;
 
     @OneToOne
-    @JoinColumn(name = "pergunta_id")
+    @JoinColumn(name = "resposta_pergunta_id")
     private PerguntasEntity pergunta;
 
     @OneToOne
