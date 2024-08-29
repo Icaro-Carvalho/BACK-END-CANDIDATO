@@ -35,6 +35,9 @@ public class EmpresaEntity {
     @Column(name = "TELEFONE")
     private String telefone;
 
+    @Column(name = "CNPJ", unique = true)
+    private String cnpj;
+
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
     private Set<VagaEntity> vaga = new HashSet<>();

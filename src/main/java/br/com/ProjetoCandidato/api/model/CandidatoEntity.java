@@ -30,12 +30,12 @@ public class CandidatoEntity {
     @NotBlank
     private String nomeCompleto;
 
-    @Column(name = "CPF", length = 11)
+    @Column(name = "CPF", length = 11, unique = true)
     @NotBlank
     @CPF
     private String cpf;
 
-    @Column(name = "EMAIL")
+    @Column(name = "EMAIL", unique = true)
     @NotBlank
     private String email;
 
